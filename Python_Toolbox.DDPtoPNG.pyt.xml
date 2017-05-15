@@ -1,2 +1,53 @@
 <?xml version="1.0"?>
-<metadata xml:lang="en"><Esri><CreaDate>20141014</CreaDate><CreaTime>14584100</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><ModDate>20150114</ModDate><ModTime>081750</ModTime><scaleRange><minScale>150000000</minScale><maxScale>5000</maxScale></scaleRange><ArcGISProfile>ItemDescription</ArcGISProfile></Esri><dataIdInfo><idCitation><resTitle>Data Driven Pages to PNG</resTitle></idCitation><idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool converts data driven pages in a MXD document to PNG images.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs><idCredit>An Tran</idCredit><searchKeys><keyword>Export</keyword><keyword>Mapping</keyword><keyword>Data Driven Pages</keyword></searchKeys></dataIdInfo><distInfo><distributor><distorFormat><formatName>ArcToolbox Tool</formatName></distorFormat></distributor></distInfo><tool name="DDPtoPNG" displayname="Data Driven Pages to PNG" toolboxalias="Custom Python Tools" xmlns=""><parameters><param name="mapFile" displayname="Map File" type="Required" direction="Input" datatype="File" expression="mapFile"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The map document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="outDir" displayname="Output Location" type="Required" direction="Input" datatype="Folder" expression="outDir"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The output directory where exported apges will be saved.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="exportList" displayname="Data Driven Pages List" type="Required" direction="Input" datatype="Multiple Value" expression="exportList;exportList..."><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The list of available data driven pages in this map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param></parameters><summary>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool converts data driven pages in a MXD document to PNG images.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary><usage>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Use this tool to export selected data driven pages in a map document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage></tool><mdHrLv><ScopeCd value="005"/></mdHrLv></metadata>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20141014</CreaDate>
+        <CreaTime>14584100</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20150114</ModDate>
+        <ModTime>081750</ModTime>
+        <scaleRange>
+            <minScale>150000000</minScale>
+            <maxScale>5000</maxScale>
+        </scaleRange>
+        <ArcGISProfile>ItemDescription</ArcGISProfile>
+    </Esri>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>Data Driven Pages to PNG</resTitle>
+        </idCitation>
+        <idAbs>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool converts data driven pages in a MXD document to PNG images.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+        <idCredit>An Tran</idCredit>
+        <searchKeys>
+            <keyword>Export</keyword>
+            <keyword>Mapping</keyword>
+            <keyword>Data Driven Pages</keyword>
+        </searchKeys>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Tool</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+    <tool displayname="Data Driven Pages to PNG" name="DDPtoPNG" toolboxalias="Custom Python Tools" xmlns="">
+        <parameters>
+            <param datatype="File" direction="Input" displayname="Map File" expression="mapFile" name="mapFile" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The map document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Folder" direction="Input" displayname="Output Location" expression="outDir" name="outDir" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The output directory where exported apges will be saved.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Multiple Value" direction="Input" displayname="Data Driven Pages List" expression="exportList;exportList..." name="exportList" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The list of available data driven pages in this map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+        </parameters>
+        <summary>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool converts data driven pages in a MXD document to PNG images.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
+        <usage>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Use this tool to export selected data driven pages in a map document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage>
+    </tool>
+    <mdHrLv>
+        <ScopeCd value="005"/>
+    </mdHrLv>
+</metadata>

@@ -1,2 +1,58 @@
 <?xml version="1.0"?>
-<metadata xml:lang="en"><Esri><CreaDate>20141023</CreaDate><CreaTime>13044900</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><ModDate>20150312</ModDate><ModTime>090242</ModTime><scaleRange><minScale>150000000</minScale><maxScale>5000</maxScale></scaleRange><ArcGISProfile>ItemDescription</ArcGISProfile></Esri><dataIdInfo><idCitation><resTitle>GeoPy Address Lookup</resTitle></idCitation><idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href="https://github.com/geopy/geopy"&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a reverse geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href="file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx"&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE="font-weight:bold;"&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs><idCredit>An Tran</idCredit><searchKeys><keyword>Address</keyword><keyword>Lookup</keyword><keyword>Geocoding</keyword><keyword>Reverse</keyword></searchKeys></dataIdInfo><distInfo><distributor><distorFormat><formatName>ArcToolbox Tool</formatName></distorFormat></distributor></distInfo><tool name="AddressLookup" displayname="GeoPy Address Lookup" toolboxalias="CustomPythonTools" xmlns=""><parameters><param name="inFeature" displayname="Input Feature" type="Required" direction="Input" datatype="Feature Class" expression="inFeature"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The feature class with coordinates to look up.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="addressExists" displayname="Address Field Exists" type="Required" direction="Input" datatype="Boolean" expression="addressExists"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Specify if the address field exists in the attribute table.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Checked - The address field exists.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - The address field does not exist. A new field called "Address" will be created. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN /&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="addressField" displayname="Address Field" type="Optional" direction="Input" datatype="String" expression="{addressField}"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field that is used to store address values.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="service" displayname="Service" type="Required" direction="Input" datatype="String" expression="Google | OpenStreetMap"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The service used to search for addresses.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param></parameters><summary>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href="https://github.com/geopy/geopy"&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a reverse geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href="file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx"&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE="font-weight:bold;"&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary><usage>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses various geocoding APIs to find a feature's adddress using it its lat/lon coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The address is populated to an existing or newly created field in the Street, City, State, Zip format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage><arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath></tool><mdHrLv><ScopeCd value="005"/></mdHrLv></metadata>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20141023</CreaDate>
+        <CreaTime>13044900</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20150312</ModDate>
+        <ModTime>090242</ModTime>
+        <scaleRange>
+            <minScale>150000000</minScale>
+            <maxScale>5000</maxScale>
+        </scaleRange>
+        <ArcGISProfile>ItemDescription</ArcGISProfile>
+    </Esri>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>GeoPy Address Lookup</resTitle>
+        </idCitation>
+        <idAbs>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href=&quot;https://github.com/geopy/geopy&quot;&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a reverse geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href=&quot;file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx&quot;&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE=&quot;font-weight:bold;&quot;&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+        <idCredit>An Tran</idCredit>
+        <searchKeys>
+            <keyword>Address</keyword>
+            <keyword>Lookup</keyword>
+            <keyword>Geocoding</keyword>
+            <keyword>Reverse</keyword>
+        </searchKeys>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Tool</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+    <tool displayname="GeoPy Address Lookup" name="AddressLookup" toolboxalias="CustomPythonTools" xmlns="">
+        <parameters>
+            <param datatype="Feature Class" direction="Input" displayname="Input Feature" expression="inFeature" name="inFeature" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The feature class with coordinates to look up.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Boolean" direction="Input" displayname="Address Field Exists" expression="addressExists" name="addressExists" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Specify if the address field exists in the attribute table.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Checked - The address field exists.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - The address field does not exist. A new field called &quot;Address&quot; will be created. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN /&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="String" direction="Input" displayname="Address Field" expression="{addressField}" name="addressField" type="Optional">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field that is used to store address values.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="String" direction="Input" displayname="Service" expression="Google | OpenStreetMap" name="service" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The service used to search for addresses.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+        </parameters>
+        <summary>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href=&quot;https://github.com/geopy/geopy&quot;&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a reverse geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href=&quot;file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx&quot;&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE=&quot;font-weight:bold;&quot;&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
+        <usage>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses various geocoding APIs to find a feature's adddress using it its lat/lon coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The address is populated to an existing or newly created field in the Street, City, State, Zip format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage>
+        <arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath>
+    </tool>
+    <mdHrLv>
+        <ScopeCd value="005"/>
+    </mdHrLv>
+</metadata>

@@ -1,1 +1,66 @@
-<metadata xml:lang="en"><Esri><CreaDate>20141006</CreaDate><CreaTime>16015800</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><ModDate>20151222</ModDate><ModTime>17001600</ModTime><scaleRange><minScale>150000000</minScale><maxScale>5000</maxScale></scaleRange><ArcGISProfile>ItemDescription</ArcGISProfile></Esri><dataIdInfo><idCitation><resTitle>Export Bookmarks</resTitle></idCitation><idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool exports selected bookmarks in a MXD document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs><searchKeys><keyword>Export</keyword><keyword>Mapping</keyword><keyword>Production</keyword><keyword>Bookmark</keyword></searchKeys><idCredit>An Tran</idCredit></dataIdInfo><distInfo><distributor><distorFormat><formatName>ArcToolbox Tool</formatName></distorFormat></distributor></distInfo><tool name="ExportBookmarks" displayname="Export Bookmarks" toolboxalias="CustomPythonTools" xmlns=""><parameters><param name="useCurrentFile" displayname="Use Currently Opened File" type="Required" direction="Input" datatype="Boolean" expression="useCurrentFile"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Export bookmarks in the currently opened document. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Select another document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="mxdFile" displayname="Map File" type="Optional" direction="Input" datatype="File" expression="{mxdFile}"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The map document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="outLocation" displayname="Output Location" type="Required" direction="Input" datatype="Folder" expression="outLocation"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The output directory where exported bookmarks will be saved.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="exportList" displayname="Bookmarks List" type="Required" direction="Input" datatype="Multiple Value" expression="exportList;exportList..."><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The bookmarks available in the selected map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="exportLayout" displayname="Export Layout" type="Required" direction="Input" datatype="Boolean" expression="exportLayout"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Specifies whether the exported image should use the layout defined in the map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Export using layout. &lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Export the data frame only. Layout settings will be ignored. This is the DEFAULT setting.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="outputW" displayname="Output Width" type="Required" direction="Input" datatype="Double" expression="outputW"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Output image width in inches.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;This setting only applies when Export Layout is unchecked.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param><param name="outputH" displayname="Output Height" type="Required" direction="Input" datatype="Double" expression="outputH"><dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Output image height in inches.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;This setting only applies when Export Layout is unchecked.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference></param></parameters><arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath><summary>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool exports selected bookmarks in a MXD document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary><usage>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Use this tool to export selected bookmarks in a map document to user specified sizes.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage></tool><mdHrLv><ScopeCd value="005"/></mdHrLv></metadata>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20141006</CreaDate>
+        <CreaTime>16015800</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20151222</ModDate>
+        <ModTime>17001600</ModTime>
+        <scaleRange>
+            <minScale>150000000</minScale>
+            <maxScale>5000</maxScale>
+        </scaleRange>
+        <ArcGISProfile>ItemDescription</ArcGISProfile>
+    </Esri>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>Export Bookmarks</resTitle>
+        </idCitation>
+        <idAbs>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool exports selected bookmarks in a MXD document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+        <searchKeys>
+            <keyword>Export</keyword>
+            <keyword>Mapping</keyword>
+            <keyword>Production</keyword>
+            <keyword>Bookmark</keyword>
+        </searchKeys>
+        <idCredit>An Tran</idCredit>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Tool</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+    <tool displayname="Export Bookmarks" name="ExportBookmarks" toolboxalias="CustomPythonTools" xmlns="">
+        <parameters>
+            <param datatype="Boolean" direction="Input" displayname="Use Currently Opened File" expression="useCurrentFile" name="useCurrentFile" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Export bookmarks in the currently opened document. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Select another document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="File" direction="Input" displayname="Map File" expression="{mxdFile}" name="mxdFile" type="Optional">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The map document to export from.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Folder" direction="Input" displayname="Output Location" expression="outLocation" name="outLocation" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The output directory where exported bookmarks will be saved.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Multiple Value" direction="Input" displayname="Bookmarks List" expression="exportList;exportList..." name="exportList" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The bookmarks available in the selected map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Boolean" direction="Input" displayname="Export Layout" expression="exportLayout" name="exportLayout" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Specifies whether the exported image should use the layout defined in the map document.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Export using layout. &lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Export the data frame only. Layout settings will be ignored. This is the DEFAULT setting.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Double" direction="Input" displayname="Output Width" expression="outputW" name="outputW" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Output image width in inches.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;This setting only applies when Export Layout is unchecked.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+            <param datatype="Double" direction="Input" displayname="Output Height" expression="outputH" name="outputH" type="Required">
+                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Output image height in inches.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;This setting only applies when Export Layout is unchecked.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+            </param>
+        </parameters>
+        <arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath>
+        <summary>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This Python tool exports selected bookmarks in a MXD document to PNG format.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
+        <usage>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Use this tool to export selected bookmarks in a map document to user specified sizes.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage>
+    </tool>
+    <mdHrLv>
+        <ScopeCd value="005"/>
+    </mdHrLv>
+</metadata>

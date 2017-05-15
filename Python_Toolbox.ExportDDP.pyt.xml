@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metadata xml:lang="en"><Esri><CreaDate>20150114</CreaDate><CreaTime>08343500</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><ModDate>20150312</ModDate><ModTime>090242</ModTime></Esri><dataIdInfo><idCitation><resTitle>Export Data Driven Pages</resTitle></idCitation></dataIdInfo><distInfo><distributor><distorFormat><formatName>ArcToolbox Tool</formatName></distorFormat></distributor></distInfo><tool name="ExportDDP" displayname="Export Data Driven Pages" toolboxalias="CustomPythonTools"><parameters><param name="mapFile" displayname="Map File" type="Required" direction="Input" datatype="File" expression="mapFile"/><param name="outDir" displayname="Output Location" type="Required" direction="Input" datatype="Folder" expression="outDir"/><param name="exportList" displayname="Data Driven Pages List" type="Required" direction="Input" datatype="Multiple Value" expression="exportList;exportList..."/><param name="outFormat" displayname="Output Format" type="Required" direction="Input" datatype="String" expression="JPEG | PDF | PNG"/></parameters></tool></metadata>
+<metadata xml:lang="en">
+    <Esri>
+        <CreaDate>20150114</CreaDate>
+        <CreaTime>08343500</CreaTime>
+        <ArcGISFormat>1.0</ArcGISFormat>
+        <SyncOnce>TRUE</SyncOnce>
+        <ModDate>20150312</ModDate>
+        <ModTime>090242</ModTime>
+    </Esri>
+    <dataIdInfo>
+        <idCitation>
+            <resTitle>Export Data Driven Pages</resTitle>
+        </idCitation>
+    </dataIdInfo>
+    <distInfo>
+        <distributor>
+            <distorFormat>
+                <formatName>ArcToolbox Tool</formatName>
+            </distorFormat>
+        </distributor>
+    </distInfo>
+    <tool displayname="Export Data Driven Pages" name="ExportDDP" toolboxalias="CustomPythonTools">
+        <parameters>
+            <param datatype="File" direction="Input" displayname="Map File" expression="mapFile" name="mapFile" type="Required"/>
+            <param datatype="Folder" direction="Input" displayname="Output Location" expression="outDir" name="outDir" type="Required"/>
+            <param datatype="Multiple Value" direction="Input" displayname="Data Driven Pages List" expression="exportList;exportList..." name="exportList" type="Required"/>
+            <param datatype="String" direction="Input" displayname="Output Format" expression="JPEG | PDF | PNG" name="outFormat" type="Required"/>
+        </parameters>
+    </tool>
+</metadata>
