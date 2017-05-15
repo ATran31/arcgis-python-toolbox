@@ -4,7 +4,7 @@ import arcpy
 class batchCAD2GDB (object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.category = "Data Processing"
+        self.category = "Data Conversion"
         self.label = "Batch Cad to GDB Converter"
         self.description = "Creates a file gdb named CAD2FGDB.gdb at source folder, and converts any dgn/dwg files in source folder to a feature class datasets in CAD2FGDB."
         self.canRunInBackground = False
