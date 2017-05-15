@@ -1,6 +1,6 @@
 from MapExportTools import *
-from DataConversionTools import *
 from GeocodingTools import *
+from DataConversionTools import *
 
 
 class Toolbox(object):
