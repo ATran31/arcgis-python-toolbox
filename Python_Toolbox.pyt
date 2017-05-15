@@ -1,6 +1,6 @@
 from MapExportTools import *
 from GeocodingTools import *
-from DataConversionTools import *
+from DataTools import *
 
 
 class Toolbox(object):
@@ -11,4 +11,4 @@ class Toolbox(object):
         self.alias = "CustomPythonTools"
 
         # List of tool classes associated with this toolbox
-        self.tools = [MapExportTools.ExportBookmarks, MapExportTools.ExportDDP, MapExportTools.DumpMXDs, DataConversionTools.batchCAD2GDB, GeocodingTools.AddressLookup, GeocodingTools.CoordinateLookup]
+        self.tools = [MapExportTools.ExportBookmarks, MapExportTools.ExportDDP, MapExportTools.DumpMXDs, DataTools.batchCAD2GDB, GeocodingTools.AddressLookup, GeocodingTools.CoordinateLookup]
