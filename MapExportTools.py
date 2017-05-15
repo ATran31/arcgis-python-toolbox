@@ -4,7 +4,7 @@ import arcpy
 class ExportBookmarks(object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.category = "Map Production"
+        self.category = "Map Export"
         self.label = "Export Bookmarks"
         self.description = "Exports all selected bookmarks in an MXD to PNG image."
         self.canRunInBackground = False
@@ -166,9 +166,9 @@ class ExportBookmarks(object):
 class ExportDDP (object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.category = "Map Production"
+        self.category = "Map Export"
         self.label = "Export Data Driven Pages"
-        self.description = "Exports all selected data driven pages in an MXD to PDF or PNG image."
+        self.description = "Exports all selected data driven pages in an MXD to JPEG, PDF or PNG image."
         self.canRunInBackground = False
 
     def getParameterInfo(self):
@@ -260,7 +260,7 @@ class ExportDDP (object):
 class DumpMXDs (object):
     def __init__(self):
         """Define the tool (tool name is the name of the class)."""
-        self.category = "Map Production"
+        self.category = "Map Export"
         self.label = "Dump MXDs"
         self.description = "Exports all MXD documents in the Source Folder to the Output File Format and saves them in the Destination Folder."
         self.canRunInBackground = False
