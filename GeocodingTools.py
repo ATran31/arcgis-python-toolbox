@@ -67,7 +67,7 @@ class AddressLookup(object):
             import imp
             try:
                 imp.find_module("geopy")
-            except:
+            except ImportError:
                 parameters[3].setErrorMessage("Your system does not have the GeoPy package installed! \n Click \"Show Help\" for additional information.")
         return
 
@@ -80,8 +80,8 @@ class AddressLookup(object):
         service = parameters[3].valueAsText
         # create the address field if it does not exist
         if addressExists is False:
-            arcpy.AddField_management(inFeature, 'Address', 'TEXT', '', '', 150, '', 'NULLABLE')
-            addressField = 'Address'
+            arcpy.AddField_management(inFeature, "Address", "TEXT", "", "", 150, "", "NULLABLE")
+            addressField = "Address"
         # search for addresses and populate field
         if service == "Google":
             from geopy.geocoders import GoogleV3
@@ -89,14 +89,14 @@ class AddressLookup(object):
             with arcpy.da.UpdateCursor(inFeature, [addressField, "SHAPE@Y", "SHAPE@X"], "", "Coordinate Systems\Geographic Coordinate Systems\World\WGS 1984") as ADDR:
                 for row in ADDR:
                     try:
-                        queryString = str(row[1])+","+str(row[2])
+                        queryString = str(row[1]) + "," + str(row[2])
                         location = geolocator.reverse(queryString, exactly_one=True)
                         row[0] = location.address[:-5]
                         ADDR.updateRow(row)
-                        arcpy.AddMessage("Matched: "+location.address[:-5])
+                        arcpy.AddMessage("Matched: " + location.address[:-5])
                         arcpy.GetMessages()
-                    except:
-                        arcpy.AddMessage("No Match: "+queryString)
+                    except IndexError:
+                        arcpy.AddMessage("No Match: " + queryString)
                         arcpy.GetMessages()
 
         if service == "OpenStreetMap":
@@ -105,14 +105,14 @@ class AddressLookup(object):
             with arcpy.da.UpdateCursor(inFeature, [addressField, "SHAPE@Y", "SHAPE@X"], "", "Coordinate Systems\Geographic Coordinate Systems\World\WGS 1984") as ADDR:
                 for row in ADDR:
                     try:
-                        queryString = str(row[1])+","+str(row[2])
+                        queryString = str(row[1]) + "," + str(row[2])
                         location = geolocator.reverse(queryString, exactly_one=True)
                         row[0] = location.address[:location.address.rfind(",")]
                         ADDR.updateRow(row)
-                        arcpy.AddMessage("Matched: "+location.address[:location.address.rfind(",")])
+                        arcpy.AddMessage("Matched: " + location.address[:location.address.rfind(",")])
                         arcpy.GetMessages()
-                    except:
-                        arcpy.AddMessage("No Match: "+queryString)
+                    except IndexError:
+                        arcpy.AddMessage("No Match: " + queryString)
                         arcpy.GetMessages()
 
 
@@ -201,7 +201,7 @@ class CoordinateLookup (object):
             import imp
             try:
                 imp.find_module("geopy")
-            except:
+            except ImportError:
                 parameters[5].setErrorMessage("Your system does not have the GeoPy package installed! \n Click \"Show Help\" for additional information.")
         return
 
@@ -216,10 +216,10 @@ class CoordinateLookup (object):
         service = parameters[5].valueAsText
         # create the address field if it does not exist
         if coordinatesExists is False:
-            arcpy.AddField_management(inFeature, 'Lat', 'DOUBLE', '', '', 12, '', 'NULLABLE')
-            latField = 'Lat'
-            arcpy.AddField_management(inFeature, 'Lon', 'DOUBLE', '', '', 12, '', 'NULLABLE')
-            lonField = 'Lon'
+            arcpy.AddField_management(inFeature, "Lat", "DOUBLE", "", "", 12, "", "NULLABLE")
+            latField = "Lat"
+            arcpy.AddField_management(inFeature, "Lon", "DOUBLE", "", "", 12, "", "NULLABLE")
+            lonField = "Lon"
         # search for addresses and populate field
         if service == "Google":
             from geopy.geocoders import GoogleV3
@@ -231,10 +231,10 @@ class CoordinateLookup (object):
                         row[1] = location.latitude
                         row[2] = location.longitude
                         ADDR.updateRow(row)
-                        arcpy.AddMessage("Matched: "+row[0])
+                        arcpy.AddMessage("Matched: " + row[0])
                         arcpy.GetMessages()
-                    except:
-                        arcpy.AddMessage("No Match: "+row[0])
+                    except IndexError:
+                        arcpy.AddMessage("No Match: " + row[0])
                         arcpy.GetMessages()
 
         if service == "OpenStreetMap":
@@ -247,8 +247,8 @@ class CoordinateLookup (object):
                         row[1] = location.latitude
                         row[2] = location.longitude
                         ADDR.updateRow(row)
-                        arcpy.AddMessage("Matched: "+row[0])
+                        arcpy.AddMessage("Matched: " + row[0])
                         arcpy.GetMessages()
-                    except:
-                        arcpy.AddMessage("No Match: "+row[0])
+                    except IndexError:
+                        arcpy.AddMessage("No Match: " + row[0])
                         arcpy.GetMessages()
