@@ -150,12 +150,12 @@ class ExportBookmarks(object):
                 # set the current dataframe extent to that of the current bookmark
                 df.extent = bkmk.extent
                 # set the output filepath
-                outFile = outLocation+"\\"+bkmk.name+".png"
+                outFile = outLocation + "\\" + bkmk.name + ".png"
                 # if layout is unchecked export without the map layout design
                 if exportLayout is False:
-                    arcpy.AddMessage("Exporting "+outFile)
+                    arcpy.AddMessage("Exporting " + outFile)
                     arcpy.GetMessage(0)
-                    arcpy.mapping.ExportToPNG(mxd, outFile, df, df_export_width=outputW*300, df_export_height=outputH*300, resolution=300)
+                    arcpy.mapping.ExportToPNG(mxd, outFile, df, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
                 # otherwise export using the map layout design
                 else:
                     arcpy.mapping.ExportToPNG(mxd, outFile, resolution=300)
@@ -180,7 +180,7 @@ class ExportDDP (object):
             datatype="DEFile",
             parameterType="Required",
             direction="Input")
-        param0.filter.list = ['mxd']
+        param0.filter.list = ["mxd"]
         # parameter1
         param1 = arcpy.Parameter(
             displayName="Output Location",
@@ -223,7 +223,7 @@ class ExportDDP (object):
                 mxd.dataDrivenPages.currentPageID = page
                 pageField = mxd.dataDrivenPages.pageNameField.name
                 pageName = mxd.dataDrivenPages.pageRow.getValue(pageField)
-                exportList.append(str(page)+'-'+pageName)
+                exportList.append(str(page) + "-" + pageName)
             parameters[2].filter.list = exportList
         return
 
@@ -245,16 +245,16 @@ class ExportDDP (object):
         for page in range(1, totalPages + 1):
             mxd.dataDrivenPages.currentPageID = page
             pageField = mxd.dataDrivenPages.pageNameField.name
-            pageName = str(page)+'-'+mxd.dataDrivenPages.pageRow.getValue(pageField)
-            outPage = outDir + '\\' + pageName
+            pageName = str(page) + "-" + mxd.dataDrivenPages.pageRow.getValue(pageField)
+            outPage = outDir + "\\" + pageName
             if pageName in exportList:
-                arcpy.AddMessage("Exporting "+outPage)
+                arcpy.AddMessage("Exporting " + outPage)
                 if outFormat == "PNG":
-                    arcpy.mapping.ExportToPNG(mxd, outPage+".png", resolution=300)
+                    arcpy.mapping.ExportToPNG(mxd, outPage + ".png", resolution=300)
                 if outFormat == "PDF":
-                    arcpy.mapping.ExportToPDF(mxd, outPage+".pdf", resolution=300)
+                    arcpy.mapping.ExportToPDF(mxd, outPage + ".pdf", resolution=300)
                 if outFormat == "JPEG":
-                    arcpy.mapping.ExportToJPEG(mxd, outPage+".jpg", resolution=300)
+                    arcpy.mapping.ExportToJPEG(mxd, outPage + ".jpg", resolution=300)
 
 
 class DumpMXDs (object):
@@ -288,7 +288,7 @@ class DumpMXDs (object):
             datatype="GPString",
             parameterType="Required",
             direction="Input")
-        param2.filter.list = ['PDF', 'PNG', 'JPEG']
+        param2.filter.list = ["PDF", "PNG", "JPEG"]
 
         params = [param0, param1, param2]
         return params
@@ -319,19 +319,19 @@ class DumpMXDs (object):
         for root, dirs, files, in os.walk(source):
             for fname in files:
                 # loop for mxd files
-                if fname[-3:] in ['mxd', 'MXD']:
-                    filePath = source+'\\'+fname
+                if fname[-3:] in ["mxd", "MXD"]:
+                    filePath = source + "\\" + fname
                     mxd = arcpy.mapping.MapDocument(filePath)
                     # make files and export
-                    if outFormat == 'PDF':
-                        savePath = os.path.join(destination+"\\"+fname[:-4]+'.pdf')
+                    if outFormat == "PDF":
+                        savePath = os.path.join(destination + "\\" + fname[:-4] + ".pdf")
                         print savePath
                         arcpy.mapping.ExportToPDF(mxd, savePath, resolution=300)
-                    elif outFormat == 'PNG':
-                        savePath = os.path.join(destination+"\\"+fname[:-4]+'.png')
+                    elif outFormat == "PNG":
+                        savePath = os.path.join(destination + "\\" + fname[:-4] + ".png")
                         print savePath
                         arcpy.mapping.ExportToPNG(mxd, savePath, resolution=300)
-                    elif outFormat == 'JPEG':
-                        savePath = os.path.join(destination+"\\"+fname[:-4]+'.jpeg')
+                    elif outFormat == "JPEG":
+                        savePath = os.path.join(destination + "\\" + fname[:-4] + ".jpeg")
                         print savePath
                         arcpy.mapping.ExportToJPEG(mxd, savePath, resolution=300)
