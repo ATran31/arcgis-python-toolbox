@@ -60,16 +60,16 @@ class batchCAD2GDB (object):
         arcpy.CreateFileGDB_management(source, "CAD2FGDB.gdb")
         for root, dirs, files in os.walk(source):
             for fname in files:
-                if fname[-3:] in ['dgn', 'dwg']:
+                if fname[-3:] in ["dgn", "dwg"]:
                     for i in ["-", " ", "(", ")"]:  # check for illegal characters in name
                         if i in fname:
-                            oldName = root+"\\"+fname
-                            newName = root+"\\"+fname.replace(i, "_")
+                            oldName = root + "\\" + fname
+                            newName = root + "\\" + fname.replace(i, "_")
                             os.rename(oldName, newName)  # rename file if illegal characters found
                             cadFile = newName
                             outName = newName[:-4]
                         else:
-                            cadFile = root+"\\"+fname
+                            cadFile = root + "\\" + fname
                             outName = fname[:-4]
-                    outGDB = source+"\\CAD2FGDB.gdb"
+                    outGDB = source + "\\CAD2FGDB.gdb"
                     arcpy.CADToGeodatabase_conversion(cadFile, outGDB, outName, referenceScale, coordinateSystem)
