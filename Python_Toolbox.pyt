@@ -11,4 +11,4 @@ class Toolbox(object):
         self.alias = "CustomPythonTools"
 
         # List of tool classes associated with this toolbox
-        self.tools = [MapExportTools.ExportBookmarks, MapExportTools.ExportDDP, MapExportTools.DumpMXDs, DataTools.batchCAD2GDB, GeocodingTools.AddressLookup, GeocodingTools.CoordinateLookup]
+        self.tools = [ExportBookmarks, ExportDDP, DumpMXDs, batchCAD2GDB, AddressLookup, CoordinateLookup]
