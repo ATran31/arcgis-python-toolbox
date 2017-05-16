@@ -1,64 +1,64 @@
 <?xml version="1.0"?>
 <metadata xml:lang="en">
-    <Esri>
-        <CreaDate>20141031</CreaDate>
-        <CreaTime>11350100</CreaTime>
-        <ArcGISFormat>1.0</ArcGISFormat>
-        <SyncOnce>TRUE</SyncOnce>
-        <ModDate>20150312</ModDate>
-        <ModTime>090242</ModTime>
-        <scaleRange>
-            <minScale>150000000</minScale>
-            <maxScale>5000</maxScale>
-        </scaleRange>
-        <ArcGISProfile>ItemDescription</ArcGISProfile>
-    </Esri>
-    <dataIdInfo>
-        <idCitation>
-            <resTitle>GeoPy Coordinate Lookup</resTitle>
-        </idCitation>
-        <idAbs>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href=&quot;https://github.com/geopy/geopy&quot;&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a forward geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href=&quot;file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx&quot;&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE=&quot;font-weight:bold;&quot;&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
-        <searchKeys>
-            <keyword>Address</keyword>
-            <keyword>Lookup</keyword>
-            <keyword>Geocoding</keyword>
-            <keyword>Forward</keyword>
-        </searchKeys>
-        <idCredit>An Tran</idCredit>
-    </dataIdInfo>
-    <distInfo>
-        <distributor>
-            <distorFormat>
-                <formatName>ArcToolbox Tool</formatName>
-            </distorFormat>
-        </distributor>
-    </distInfo>
-    <tool displayname="GeoPy Coordinate Lookup" name="CoordinateLookup" toolboxalias="CustomPythonTools" xmlns="">
-        <parameters>
-            <param datatype="Feature Class" direction="Input" displayname="Input Feature" expression="inFeature" name="inFeature" type="Required">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The feature class with addresses to search.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-            <param datatype="Boolean" direction="Input" displayname="Coordinate Fields Exists" expression="coordinatesExists" name="coordinatesExists" type="Required">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Fields exist to store the lat/lon coordinates returned from the search.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Two fields named &quot;Lat&quot;, and &quot;Lon&quot; field will be created to store the coordinates returned by the search. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-            <param datatype="String" direction="Input" displayname="Address Field" expression="addressField" name="addressField" type="Required">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field containing address values to search.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-            <param datatype="String" direction="Input" displayname="Lat Field" expression="{latField}" name="latField" type="Optional">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field to store latitude coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-            <param datatype="String" direction="Input" displayname="Lon Field" expression="{lonField}" name="lonField" type="Optional">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field to store longitude coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-            <param datatype="String" direction="Input" displayname="Service" expression="Google | OpenStreetMap" name="service" type="Required">
-                <dialogReference>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The service used to search for coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
-            </param>
-        </parameters>
-        <summary>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href=&quot;https://github.com/geopy/geopy&quot;&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a forward geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href=&quot;file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx&quot;&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE=&quot;font-weight:bold;&quot;&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
-        <usage>&lt;DIV STYLE=&quot;text-align:Left;&quot;&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses various geocoding APIs to find a feature's lat/lon coordinates using its address.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The coordinates are populated to existing or newly created coordinate fields.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage>
-        <arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath>
-    </tool>
-    <mdHrLv>
-        <ScopeCd value="005"/>
-    </mdHrLv>
+	<Esri>
+		<CreaDate>20141031</CreaDate>
+		<CreaTime>11350100</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<SyncOnce>TRUE</SyncOnce>
+		<ModDate>20150312</ModDate>
+		<ModTime>090242</ModTime>
+		<scaleRange>
+			<minScale>150000000</minScale>
+			<maxScale>5000</maxScale>
+		</scaleRange>
+		<ArcGISProfile>ItemDescription</ArcGISProfile>
+	</Esri>
+	<dataIdInfo>
+		<idCitation>
+			<resTitle>GeoPy Coordinate Lookup</resTitle>
+		</idCitation>
+		<idAbs>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href="https://github.com/geopy/geopy"&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a forward geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href="file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx"&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE="font-weight:bold;"&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</idAbs>
+		<searchKeys>
+			<keyword>Address</keyword>
+			<keyword>Lookup</keyword>
+			<keyword>Geocoding</keyword>
+			<keyword>Forward</keyword>
+		</searchKeys>
+		<idCredit>An Tran</idCredit>
+	</dataIdInfo>
+	<distInfo>
+		<distributor>
+			<distorFormat>
+				<formatName>ArcToolbox Tool</formatName>
+			</distorFormat>
+		</distributor>
+	</distInfo>
+	<tool displayname="GeoPy Coordinate Lookup" name="CoordinateLookup" toolboxalias="CustomPythonTools" xmlns="">
+		<parameters>
+			<param datatype="Feature Class" direction="Input" displayname="Input Feature" expression="inFeature" name="inFeature" type="Required">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The feature class with addresses to search.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+			<param datatype="Boolean" direction="Input" displayname="Coordinate Fields Exists" expression="coordinatesExists" name="coordinatesExists" type="Required">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;Checked - Fields exist to store the lat/lon coordinates returned from the search.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Unchecked - Two fields named "Lat", and "Lon" field will be created to store the coordinates returned by the search. This is the DEFAULT.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+			<param datatype="String" direction="Input" displayname="Address Field" expression="addressField" name="addressField" type="Required">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field containing address values to search.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+			<param datatype="String" direction="Input" displayname="Lat Field" expression="{latField}" name="latField" type="Optional">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field to store latitude coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+			<param datatype="String" direction="Input" displayname="Lon Field" expression="{lonField}" name="lonField" type="Optional">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The field to store longitude coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+			<param datatype="String" direction="Input" displayname="Service" expression="Google | OpenStreetMap" name="service" type="Required">
+				<dialogReference>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;The service used to search for coordinates.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</dialogReference>
+			</param>
+		</parameters>
+		<summary>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses the &lt;/SPAN&gt;&lt;A href="https://github.com/geopy/geopy"&gt;&lt;SPAN&gt;GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;SPAN&gt;Python package in order to conduct a forward geocode using the various geocoding APIs.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;A href="file://balfil03/civproj/EVAC_MGT/General_References/Tutorials/Get PIP instructions.docx"&gt;&lt;SPAN&gt;Installing GeoPy&lt;/SPAN&gt;&lt;/A&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN STYLE="font-weight:bold;"&gt;Note: If using the Google service, as a free user, you are limited to 2500 queries a day at a rate of 5 queries per second.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</summary>
+		<usage>&lt;DIV STYLE="text-align:Left;"&gt;&lt;DIV&gt;&lt;DIV&gt;&lt;P&gt;&lt;SPAN&gt;This tool uses various geocoding APIs to find a feature's lat/lon coordinates using its address.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;The coordinates are populated to existing or newly created coordinate fields.&lt;/SPAN&gt;&lt;/P&gt;&lt;/DIV&gt;&lt;/DIV&gt;&lt;/DIV&gt;</usage>
+		<arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.2\Help\gp</arcToolboxHelpPath>
+	</tool>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
 </metadata>
