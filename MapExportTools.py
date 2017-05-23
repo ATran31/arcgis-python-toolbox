@@ -133,11 +133,11 @@ class ExportBookmarks(object):
             mxdFile = "CURRENT"
         else:
             mxdFile = parameters[1].valueAsText
-            outLocation = parameters[2].valueAsText
-            exportList = parameters[3].valueAsText
-            exportLayout = parameters[4].value
-            outputW = parameters[5].value
-            outputH = parameters[6].value
+        outLocation = parameters[2].valueAsText
+        exportList = parameters[3].valueAsText
+        exportLayout = parameters[4].value
+        outputW = parameters[5].value
+        outputH = parameters[6].value
         # specify mxd file location
         mxd = arcpy.mapping.MapDocument(mxdFile)
         # specify dataframe in MXD
