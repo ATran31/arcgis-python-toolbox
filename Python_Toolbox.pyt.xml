@@ -5,8 +5,8 @@
 		<CreaTime>06280800</CreaTime>
 		<ArcGISFormat>1.0</ArcGISFormat>
 		<SyncOnce>TRUE</SyncOnce>
-		<ModDate>20170516</ModDate>
-		<ModTime>124102</ModTime>
+		<ModDate>20170522</ModDate>
+		<ModTime>220801</ModTime>
 		<scaleRange>
 			<minScale>150000000</minScale>
 			<maxScale>5000</maxScale>
@@ -15,7 +15,7 @@
 	</Esri>
 	<toolbox alias="CustomPythonTools" name="Python_Toolbox">
 		<arcToolboxHelpPath>c:\program files (x86)\arcgis\desktop10.4\Help\gp</arcToolboxHelpPath>
-		<toolsets/>
+		<toolsets><toolset name="Data Conversion"/><toolset name="Geocoding"/><toolset name="Map Export"/></toolsets>
 	</toolbox>
 	<dataIdInfo>
 		<idCitation>
