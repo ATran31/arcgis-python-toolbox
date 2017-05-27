@@ -68,7 +68,15 @@ class ExportBookmarks(object):
             direction="Input")
         param6.enabled = False
 
-        params = [param0, param1, param2, param3, param4, param5, param6]
+        param7 = arcpy.Parameter(
+            displayName="Output Format",
+            name="outFormat",
+            datatype="GPString",
+            parameterType="Required",
+            direction="Input")
+        param7.filter.list = ["PDF", "PNG", "JPEG"]
+
+        params = [param0, param1, param2, param3, param4, param5, param6, param7]
         return params
 
     def isLicensed(self):
@@ -127,23 +135,41 @@ class ExportBookmarks(object):
         exportLayout = parameters[4].value
         outputW = parameters[5].value
         outputH = parameters[6].value
+        outFormat = parameters[7].valueAsText
 
-        # specify mxd file location
         mxd = arcpy.mapping.MapDocument(mxdFile)
+        df = arcpy.mapping.ListDataFrames(mxd, "")[0]
+        self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+        # TODO need to figure out why calling self.bkmkList alone is causing AttributeError
+        # it was already initialized and assigned in updateParameters
 
-        # loop through the exportList
         for bkmk in self.bkmkList:
+            df.extent = bkmk.extent
             if bkmk.name in exportList:
-                # set the output filepath
-                outFile = outLocation + "\\" + bkmk.name + ".png"
-                # if layout is unchecked export without the map layout design
-                if exportLayout is False:
+                if outFormat == "PDF":
+                    outFile = outLocation + "\\" + bkmk.name + ".pdf"
                     arcpy.AddMessage("Exporting " + outFile)
                     arcpy.GetMessage(0)
-                    arcpy.mapping.ExportToPNG(mxd, outFile, bkmk.extent, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
-                # otherwise export using the map layout design
-                else:
-                    arcpy.mapping.ExportToPNG(mxd, outFile, resolution=300)
+                    if exportLayout is False:
+                        arcpy.mapping.ExportToPDF(mxd, outFile, df, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
+                    else:
+                        arcpy.mapping.ExportToPDF(mxd, outFile, resolution=300)
+                elif outFormat == "PNG":
+                    outFile = outLocation + "\\" + bkmk.name + ".png"
+                    arcpy.AddMessage("Exporting " + outFile)
+                    arcpy.GetMessage(0)
+                    if exportLayout is False:
+                        arcpy.mapping.ExportToPNG(mxd, outFile, df, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
+                    else:
+                        arcpy.mapping.ExportToPNG(mxd, outFile, resolution=300)
+                elif outFormat == "JPEG":
+                    outFile = outLocation + "\\" + bkmk.name + ".jpeg"
+                    arcpy.AddMessage("Exporting " + outFile)
+                    arcpy.GetMessage(0)
+                    if exportLayout is False:
+                        arcpy.mapping.ExportToJPEG(mxd, outFile, df, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
+                    else:
+                        arcpy.mapping.ExportToJPEG(mxd, outFile, resolution=300)
         return
 
 
