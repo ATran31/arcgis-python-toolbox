@@ -83,21 +83,16 @@ class ExportBookmarks(object):
             parameters[1].enabled = False
             mxd = arcpy.mapping.MapDocument("CURRENT")
             df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-            bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-            exportList = []
-            for bkmk in bkmkList:
-                exportList.append(bkmk.name)
-                parameters[3].filter.list = exportList
+            self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+            parameters[3].filter.list = [bkmk.name for bkmk in self.bkmkList]
         if parameters[0].value is False:
             parameters[1].enabled = True
             if parameters[1].altered:
+                parameters[3].filter.list = []  # clears the list of bookmarks from the previously selected file
                 mxd = arcpy.mapping.MapDocument(str(parameters[1].value))
                 df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-                bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-                exportList = []
-                for bkmk in bkmkList:
-                    exportList.append(bkmk.name)
-                    parameters[3].filter.list = exportList
+                self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+                parameters[3].filter.list = [bkmk.name for bkmk in self.bkmkList]
         if parameters[4].value is False:
             parameters[5].enabled = True
             parameters[5].value = 6.95
@@ -112,18 +107,11 @@ class ExportBookmarks(object):
         """Modify the messages created by internal validation for each tool
         parameter.  This method is called after internal validation."""
         if parameters[1].altered:
-            mxd = arcpy.mapping.MapDocument(str(parameters[1].value))
-            df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-            bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-            if len(bkmkList) == 0:
+            if len(parameters[3].filter.list) == 0:
                 parameters[1].setErrorMessage("This map document has no bookmarks!")
-        if parameters[0].altered:
-            if parameters[0].value is True:
-                mxd = arcpy.mapping.MapDocument("CURRENT")
-                df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-                bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-                if len(bkmkList) == 0:
-                    parameters[0].setErrorMessage("This map document has no bookmarks!")
+        if parameters[0].altered & parameters[0].value is True:
+            if len(parameters[3].filter.list) == 0:
+                parameters[0].setErrorMessage("This map document has no bookmarks!")
         return
 
     def execute(self, parameters, messages):
@@ -133,33 +121,29 @@ class ExportBookmarks(object):
             mxdFile = "CURRENT"
         else:
             mxdFile = parameters[1].valueAsText
+
         outLocation = parameters[2].valueAsText
         exportList = parameters[3].valueAsText
         exportLayout = parameters[4].value
         outputW = parameters[5].value
         outputH = parameters[6].value
+
         # specify mxd file location
         mxd = arcpy.mapping.MapDocument(mxdFile)
-        # specify dataframe in MXD
-        df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-        # create a list of all bookmarks in MXD
-        bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+
         # loop through the exportList
-        for bkmk in bkmkList:
+        for bkmk in self.bkmkList:
             if bkmk.name in exportList:
-                # set the current dataframe extent to that of the current bookmark
-                df.extent = bkmk.extent
                 # set the output filepath
                 outFile = outLocation + "\\" + bkmk.name + ".png"
                 # if layout is unchecked export without the map layout design
                 if exportLayout is False:
                     arcpy.AddMessage("Exporting " + outFile)
                     arcpy.GetMessage(0)
-                    arcpy.mapping.ExportToPNG(mxd, outFile, df, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
+                    arcpy.mapping.ExportToPNG(mxd, outFile, bkmk.extent, df_export_width=outputW * 300, df_export_height=outputH * 300, resolution=300)
                 # otherwise export using the map layout design
                 else:
                     arcpy.mapping.ExportToPNG(mxd, outFile, resolution=300)
-        del mxd
         return
 
 
