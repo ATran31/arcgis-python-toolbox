@@ -91,16 +91,15 @@ class ExportBookmarks(object):
             parameters[1].enabled = False
             mxd = arcpy.mapping.MapDocument("CURRENT")
             df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-            self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-            parameters[3].filter.list = [bkmk.name for bkmk in self.bkmkList]
+            bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+            parameters[3].filter.list = [bkmk.name for bkmk in bkmkList]
         if parameters[0].value is False:
             parameters[1].enabled = True
             if parameters[1].altered:
-                parameters[3].filter.list = []  # clears the list of bookmarks from the previously selected file
                 mxd = arcpy.mapping.MapDocument(str(parameters[1].value))
                 df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-                self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-                parameters[3].filter.list = [bkmk.name for bkmk in self.bkmkList]
+                bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
+                parameters[3].filter.list = [bkmk.name for bkmk in bkmkList]
         if parameters[4].value is False:
             parameters[5].enabled = True
             parameters[5].value = 6.95
@@ -139,11 +138,9 @@ class ExportBookmarks(object):
 
         mxd = arcpy.mapping.MapDocument(mxdFile)
         df = arcpy.mapping.ListDataFrames(mxd, "")[0]
-        self.bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
-        # TODO need to figure out why calling self.bkmkList alone is causing AttributeError
-        # it was already initialized and assigned in updateParameters
+        bkmkList = arcpy.mapping.ListBookmarks(mxd, "", df)
 
-        for bkmk in self.bkmkList:
+        for bkmk in bkmkList:
             df.extent = bkmk.extent
             if bkmk.name in exportList:
                 if outFormat == "PDF":
